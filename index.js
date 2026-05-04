@@ -33,7 +33,8 @@ bot.on('message', async (msg) => {
     );
 
     bot.sendMessage(chatId, "✅ Video ready:");
-    bot.sendVideo(chatId, output);
+    const videoUrl = Array.isArray(output) ? output[0] : output;
+bot.sendVideo(chatId, videoUrl);
 
   } catch (error) {
     console.log(error);
